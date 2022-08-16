@@ -71,13 +71,16 @@ module.exports = [
         type: "middleware", // variant handler id
         options: {
           // Express middleware to execute
-          middleware: (req, res) => {
+          middleware: (req, res, next) => {
             const address = req.params.address;
             const tokenId = req.params.tokenId;
-            const result = baseNftMetadata;
-            result.contract = address;
-            result.tokenId = tokenId;
-            res.status(200).send(result);
+            if (tokenId == "metadata") return next();
+            else {
+              const result = baseNftMetadata;
+              result.contract = address;
+              result.tokenId = tokenId;
+              res.status(200).send(result);
+            }
           },
         },
       },

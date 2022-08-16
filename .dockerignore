@@ -1,0 +1,10 @@
+.github/
+.git/
+.gitignore
+
+node_modules/
+dist/
+
+apigateway/
+
+README.md

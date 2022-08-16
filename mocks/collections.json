@@ -1,0 +1,11 @@
+[
+  {
+    "id": "nfts",
+    "routes": [
+      "NFT:eoa",
+      "collectionNFT:collection",
+      "tokenMetadata:success",
+      "collectionMetadata:success"
+    ]
+  }
+]
